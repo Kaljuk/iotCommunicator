@@ -26,19 +26,20 @@ public static void main(String[] args) throws Exception
   Scanner input_1 = new Scanner(System.in);
   System.out.print("Sisesta oma number: ");
   String number = input_1.nextLine();
+  // Added format
   while((!number.matches("[0-9]+")) || !(number.length() >= min_num) || !(number.length() <=  8 )) //error handle
   {
-  if (number.matches("^[0-9]+")|| !(number.length() <= 8)) {
-    System.out.println("\nNumber peab olema võrdne või pikem"+min_num);
-    System.out.println("Praegune number oli"+number.length()+" kohta.");
-  } else {
-    System.out.println("Number peab koosnema numbridest.");
-  }
-  System.out.println("Kirjuta number uuesti: ");
-  number = input_1.nextLine();
-  }
-  out.print("\nNumber on: "+number);
+    if (number.matches("^[0-9]+")|| !(number.length() <= 8)) {
+      System.out.println("\nNumber peab olema võrdne või pikem"+min_num);
+      System.out.println("Praegune number oli"+number.length()+" kohta.");
+    } else {
+      System.out.println("Number peab koosnema numbridest.");
+    }
+    System.out.println("Kirjuta number uuesti: ");
+    number = input_1.nextLine();
+    }
+    out.print("\nNumber on: "+number);
 
-  out.close(); //sulgen writeri
+    out.close(); //sulgen writeri
 }
 }
